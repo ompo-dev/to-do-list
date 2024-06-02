@@ -17,16 +17,20 @@ function App() {
   }, []);
 
   function addTask(name) {
-    if (name===null){
-    setTasks(prev => {
-      return [...prev, {name:name,done:false}];
-    });
+    if (!name) {
+      alert("O nome da tarefa não pode ser vazio!");
+      return;
+    }
+
+  setTasks(prev => {
+    return [...prev, { name: name, done: false }];
+  });
   }
-  }
+
 
   function removeTask(indexToRemove) {
     setTasks(prev => {
-      return prev.filter((taskObject,index) => index !== indexToRemove);
+      return prev.filter((index) => index !== indexToRemove);
     });
   }
 
