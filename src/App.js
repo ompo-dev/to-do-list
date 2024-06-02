@@ -30,7 +30,7 @@ function App() {
 
   function removeTask(indexToRemove) {
     setTasks(prev => {
-      return prev.filter((index) => index !== indexToRemove);
+      return prev.filter((taskObject, index) => index !== indexToRemove);
     });
   }
 
