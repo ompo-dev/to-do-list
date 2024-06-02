@@ -17,9 +17,11 @@ function App() {
   }, []);
 
   function addTask(name) {
+    if (name===null){
     setTasks(prev => {
       return [...prev, {name:name,done:false}];
     });
+  }
   }
 
   function removeTask(indexToRemove) {
