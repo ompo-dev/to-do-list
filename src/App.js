@@ -59,14 +59,6 @@ function App() {
     return 'Boa!! Continua assim';
   }
 
-  function renameTask(index,newName) {
-    setTasks(prev => {
-      const newTasks = [...prev];
-      newTasks[index].name = newName;
-      return newTasks;
-    })
-  }
-
   return (
     <main>
       <h1>To do list - Maicon</h1>
@@ -75,7 +67,6 @@ function App() {
       <TaskForm onAdd={addTask} />
       {tasks.map((task,index) => (
         <Task {...task}
-              onRename={newName => renameTask(index,newName)}
               onTrash={() => removeTask(index)}
               onToggle={done => updateTaskDone(index, done)} />
       ))}
